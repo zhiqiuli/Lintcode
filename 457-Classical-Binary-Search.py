@@ -1,4 +1,4 @@
-https://www.lintcode.com/problem/457/
+# https://www.lintcode.com/problem/457/
 
 class Solution:
     """
