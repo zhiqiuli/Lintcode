@@ -22,11 +22,11 @@ class Solution:
             # 3 如果nums[mid] >= target,则题解一定在左边，否则题解在右边
             # x x x x o o o
             #         ^
-            if target <= nums[mid]:
+            if nums[mid] >= target:
                 end = mid
             else:
                 start = mid
-        
+	        
         # 4
         if nums[start] == target:
             return start
