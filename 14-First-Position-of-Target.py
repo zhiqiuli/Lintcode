@@ -20,7 +20,9 @@ class Solution:
             mid = start + int((end-start)/2)
 
             # 3 如果nums[mid] >= target,则题解一定在左边，否则题解在右边
-            if nums[mid] >= target:
+            # x x x x o o o
+            #         ^
+            if target <= nums[mid]:
                 end = mid
             else:
                 start = mid
