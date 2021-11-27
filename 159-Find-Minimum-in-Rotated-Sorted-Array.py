@@ -21,7 +21,7 @@ class Solution:
             # 2
             mid = start + int((end - start)/2)
 
-            # 3 the first position where <= the last number
+            # 3 The basic idea is to find the first position where <= the last number
             if nums[mid] <= target:
                 end = mid
             else:
