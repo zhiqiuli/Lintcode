@@ -1,0 +1,33 @@
+1. 在vv(v)xxx中，找最后一个对条件成立的位置（假设condition是外部定义的一个布尔函数）
+
+public int binarySearch (int left, int right){
+	int start = left, end = right;
+	while (start + 1 < end) {
+		int mid = start + (end - start) / 2
+		if (condition(mid)) {
+			start = mid;
+		} else {
+			end = mid
+		}
+	}
+	if (condition(end)) return end;
+	if (condition(start)) return start;
+	return -1
+}
+
+2. 在xxx(v)vv中，找第一个对条件成立的位置
+
+public int binarySearch (int left, int right){
+	int start = left, end = right;
+	while (start + 1 < end) {
+		int mid = start + (end - start) / 2
+		if (condition(mid)) {
+			end = mid;
+		} else {
+			start = mid
+		}
+	}
+	if (condition(start)) return start;
+	if (condition(end)) return end;
+	return -1
+}
