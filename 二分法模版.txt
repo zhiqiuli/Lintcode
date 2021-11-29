@@ -7,7 +7,7 @@ public int binarySearch (int left, int right){
 		if (condition(mid)) {
 			start = mid;
 		} else {
-			end = mid
+			end = mid;
 		}
 	}
 	if (condition(end)) return end;
@@ -24,7 +24,7 @@ public int binarySearch (int left, int right){
 		if (condition(mid)) {
 			end = mid;
 		} else {
-			start = mid
+			start = mid;
 		}
 	}
 	if (condition(start)) return start;
