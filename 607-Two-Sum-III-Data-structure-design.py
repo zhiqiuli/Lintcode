@@ -1,4 +1,10 @@
 # https://www.lintcode.com/problem/607/description?_from=collection&fromId=161
+'''
+使用哈希表的方法是最快的。
+
+add 可以做到 O(1)
+find 可以做到 O(n)
+'''
 
 class TwoSum(object):
 
