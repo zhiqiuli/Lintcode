@@ -10,7 +10,7 @@ class Solution:
         if not nums or len(nums) < 2:
             return 0
             
-        nums.sort()
+        nums.sort() # important to sort the array in the beginnning
 
         count = 0
         start, end = 0, len(nums) - 1
@@ -20,6 +20,7 @@ class Solution:
                 count += 1
                 start += 1
                 end   -= 1
+                # skip duplicated elements 2, 2, 3, ...
                 while start < end and nums[start] == nums[start - 1]:
                     start += 1
                 while start < end and nums[end]   == nums[end + 1]:
