@@ -1,0 +1,13 @@
+Partition 模版
+
+while left <= right:
+	while left <= right and nums[left] 应该在左边：
+		left += 1
+	while left <= right and nums[right] 应该在右边：
+		right -= 1
+
+	if left <= right:
+		# 找到一个不该在左侧的和不该在右边的，交换他们
+		nums[left], nums[right] = nums[right], nums[left]
+		left += 1
+		right -= 1
