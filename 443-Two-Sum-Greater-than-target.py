@@ -1,3 +1,7 @@
+# https://www.lintcode.com/problem/443/?_from=collection&fromId=161
+'''
+2Sum模版
+'''
 class Solution:
     """
     @param nums: an array of integer
