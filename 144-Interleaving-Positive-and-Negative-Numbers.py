@@ -1,3 +1,5 @@
+# https://www.lintcode.com/problem/144/?_from=collection&fromId=161
+
 class Solution:
     """
     @param: A: An integer array.
