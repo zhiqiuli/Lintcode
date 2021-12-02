@@ -15,7 +15,7 @@ class Solution:
 
         while queue:
             distance += 1            
-            for _ in range(len(queue)): # 分层的bfs，需要range(len(queue))
+            for _ in range(len(queue)): # 简单图最短路径，分层bfs，需要range(len(queue))
                 word = queue.popleft()
                 if word == end:
                     return distance
