@@ -1,0 +1,22 @@
+### inorder iteration tree 模版题
+### 创建一个dummy node，右指针指向root
+### 并放在stack里，此时stack的栈顶是dummy
+### 是iterator的位置
+
+dummy = TreeNode(0)
+dummy.right = root
+stack = [dummy]
+
+inorder = []
+
+while stack:
+    node = stack.pop()
+    if node.right:
+        node = node.right
+        while node:
+            stack.append(node)
+            node = node.left
+    if stack:
+        inorder.append(stack[-1].val)
+
+return inorder
