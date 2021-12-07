@@ -15,7 +15,8 @@ class Solution:
     """
     def flatten(self, root):
         return self.helper(root)
-
+    
+    # restructure and return last node in pre-order 
     def helper(self, root):
         if root is None:
             return None
