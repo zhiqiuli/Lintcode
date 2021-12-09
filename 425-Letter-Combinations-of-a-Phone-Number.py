@@ -1,3 +1,6 @@
+# https://www.lintcode.com/problem/425/description?_from=collection&fromId=161
+# 寻找所有方案 采用dfs
+
 num2letter = {'2' : 'abc',
               '3' : 'def',
               '4' : 'ghi',
