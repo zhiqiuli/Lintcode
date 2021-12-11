@@ -11,7 +11,7 @@ permutation 排列 不需要index
 所有路径->回溯搜索
 	permutation.add()
 	visited.add()
-	dfs
+	dfs()
 	permutation.pop()
 	visited.pop()
 
@@ -19,7 +19,10 @@ permutation 排列 不需要index
 此时不如使用bfs
 	permutation.add()
 	visited.add()
-	dfs
+	dfs()
+
+相对于bfs来说，dfs更节省空间。
+找最短距离、连通块时，使用bfs。
 
 ---
 
