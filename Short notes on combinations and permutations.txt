@@ -2,10 +2,11 @@ Short notes on combinations and permutations
 
 ---
 
-combination 存在index
+combination 组合 需要index
 
-permutation 不存在index
-            一个数不能使用两次 visited
+permutation 排列 不需要index
+                但是一个数不能使用两次 使用visited
+                一般来说 排列问题需要使用visited
 
 所有路径->回溯搜索
 	permutation.add()
@@ -35,8 +36,7 @@ visited x √  x  x
 
 list of questions
 
-permutations I
-permutations II
+permutations I & II
 N queens
-next permutation
-string permutation II
+next permutation I & II
+string permutation I & II
