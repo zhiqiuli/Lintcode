@@ -1,0 +1,42 @@
+Short notes on combinations and permutations
+
+---
+
+combination 存在index
+
+permutation 不存在index
+            一个数不能使用两次 visited
+
+所有路径->回溯搜索
+	permutation.add()
+	visited.add()
+	dfs
+	permutation.pop()
+	visited.pop()
+
+所有的点->不用回溯
+此时不如使用bfs
+	permutation.add()
+	visited.add()
+	dfs
+
+---
+
+permutation去重
+
+存在相同时2'=2" 先挑前面的2' 再挑后面的2"
+
+所以存在以下情况 return或break
+
+nums    1 2' 2" 3
+visited x √  x  x
+
+
+
+list of questions
+
+permutations I
+permutations II
+N queens
+next permutation
+string permutation II
