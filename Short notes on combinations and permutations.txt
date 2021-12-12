@@ -44,3 +44,7 @@ N queens
 next permutation I & II
 string permutation I & II
 word break\word ladder\word search\word pattern
+
+Word Search:
+	- Search a given word in a matrix
+	- 因为搜索4个方向，存在回溯的步骤，所以考虑dfs
