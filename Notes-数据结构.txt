@@ -1,0 +1,38 @@
+常见的数据结构
+
+Binary Tree
+
+Linked List
+
+Queue
+	支持操作：O(1) Push / O(1) Pop / O(1) Top
+	主要用于BFS
+	用linked list来实现
+	Deque用doubly linked list来实现
+
+Stack
+	支持操作：O(1) Push / O(1) Pop / O(1) Top
+	非递归实现DFS的主要数据结构
+	Python中的list即可
+	preorder/inorder traversal
+
+Array
+
+Hash (Hash Set/Hash Map)
+	支持操作：O(1) Insert / O(1) Find / O(1) Delete
+	Python中的dict即可
+	O(1)的提前条件是O(keySize)是O(1)
+
+Heap (Priority Queue)
+
+---
+
+Union Find
+
+Trie
+
+---
+
+LRU Cache
+Insert Delete GetRandom O(1)
+First Unique Number in Data Stream (和LRU几乎是一模一样)
