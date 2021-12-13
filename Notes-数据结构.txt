@@ -24,6 +24,15 @@ Hash (Hash Set/Hash Map)
 	O(1)的提前条件是O(keySize)是O(1)
 
 Heap (Priority Queue)
+	支持操作：O(log N) Add / O(log N) Remove / O(1) Min or Max
+	Python:heapq
+		Actually O(log N) Push / O(log N) Pop / O(1) Top
+		对于Heap的题目，一般来说是用不到O(log N) Remove的
+		Python默认是minheap，传入负值的话变成maxheap
+	heapq/PQ vs Heap - heapq/PQ的Remove是O(N)的
+	构建一个heap的时间复杂度 -> O(N) heapq.heapify([...])
+	遍历一个heap的时间复杂度 -> O(NlogN) pop操作是O(log N)的
+
 
 ---
 
@@ -36,3 +45,15 @@ Trie
 LRU Cache
 Insert Delete GetRandom O(1)
 First Unique Number in Data Stream (和LRU几乎是一模一样)
+Ugly Number II: O(Nlog N)做法 使用hash和heapq
+K Closed Points
+Top k largest numner II
+	Maxheap
+		保存所有元素的 add O(log N)
+		return的时候，选出来以后还要放回去 O(klog N)
+	Minheap（保存最大的k个）
+		保存k个数 add O(klog k)
+Top k Frequent Elements
+Merge k Sorted Linked Lists
+	使用priority queue
+	使用类似归并排序的分支算法
