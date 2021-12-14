@@ -40,6 +40,8 @@ Union Find
 
 Trie
 
+Segment Tree
+
 ---
 
 LRU Cache
@@ -57,3 +59,21 @@ Top k Frequent Elements
 Merge k Sorted Linked Lists
 	使用priority queue
 	使用类似归并排序的分支算法
+
+Merge Two Sorted Arrays
+Merge k Sorted Interval Lists
+Intersections of Two Arrays I & II
+	(1) Hash
+	(2) Merge 2 sorted array
+	(3) Binary search
+Intersections of Arrays
+Sparse Matrix Multiplication
+
+Median of Two Sorted Arrays
+	FindMedian = FindKth(k=n/2)
+Median of K Sorted Arrays
+
+Maximum of Subarray
+
+	Subarray O(n^2)
+	Subsequence O(2^n)
