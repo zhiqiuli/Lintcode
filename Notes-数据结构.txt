@@ -29,6 +29,14 @@ Heap (Priority Queue)
 		Actually O(log N) Push / O(log N) Pop / O(1) Top
 		对于Heap的题目，一般来说是用不到O(log N) Remove的
 		Python默认是minheap，传入负值的话变成maxheap
+
+		Minheap Example:
+            10                      10
+         /      \               /       \  
+       20        100          15         30  
+      /                      /  \        /  \
+    30                     40    50    100   40
+
 	heapq/PQ vs Heap - heapq/PQ的Remove是O(N)的
 	构建一个heap的时间复杂度 -> O(N) heapq.heapify([...])
 	遍历一个heap的时间复杂度 -> O(NlogN) pop操作是O(log N)的
