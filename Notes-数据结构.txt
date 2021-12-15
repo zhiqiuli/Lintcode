@@ -30,12 +30,12 @@ Heap (Priority Queue)
 		对于Heap的题目，一般来说是用不到O(log N) Remove的
 		Python默认是minheap，传入负值的话变成maxheap
 
-		Minheap Example:
-            10                      10
+		Minheap Example:	    Maxheap Example:
+            10                     100
          /      \               /       \  
-       20        100          15         30  
+       20        100          80         60  
       /                      /  \        /  \
-    30                     40    50    100   40
+    30                     40    50    10   40
 
 	heapq/PQ vs Heap - heapq/PQ的Remove是O(N)的
 	构建一个heap的时间复杂度 -> O(N) heapq.heapify([...])
@@ -63,6 +63,11 @@ Top k largest numner II
 		return的时候，选出来以后还要放回去 O(klog N)
 	Minheap（保存最大的k个）
 		保存k个数 add O(klog k)
+			[10,20,30,100] and k=3 > [-100,-30,-20,-10]
+			Minheap
+	           -100
+	         /      \
+	       -30       -20
 Top k Frequent Elements
 Merge k Sorted Linked Lists
 	使用priority queue
