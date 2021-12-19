@@ -64,7 +64,7 @@ class Solution:
         start, end = 0, len(A) - 1
         while start + 1 < end:
             mid = (start + end) // 2
-            if A[mid] >= target:
+            if A[mid] >= target: # 注意是>=。譬如说[1]，target是1，不需要进行append。
                 end = mid
             else:
                 start = mid
