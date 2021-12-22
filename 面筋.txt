@@ -3,3 +3,4 @@ Upstart
 835 · Hamming Distance
 213 · String Compression
 41 · Maximum Subarray
+Number of Closed Islands
