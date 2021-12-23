@@ -3,10 +3,10 @@ Upstart
 835 · Hamming Distance
 213 · String Compression
 41 · Maximum Subarray
+975 · 2 Keys Keyboard
 
 To-do
 https://www.1point3acres.com/bbs/thread-831238-1-1.html
 (1) 433 · Number of Islands
 (2) 第一轮： 给一个loan数量，给APR （比如借了10k，apr：18%），利息固定，每个月还钱。但是这个人换了3个月1000后，再也不还了，求现在欠多少钱。。。因为数据给我了是dataframe形式，我就开始用pandas来导入，join，分析，结果发现直接写个函数求一下就行了。。没时间了。。。
 (3) 第三轮：coding， 求给一个target和 wordslist，求wordlist中和target最短的编辑距离的前五个word，比如[happy,  help, hash, coding, want, offer],   targe= hold。和hold的最短编辑距离就是help，因为只要变e，和p，2个就行了，其次是hash，要变ash（3个）再是， happy，want， offer，这三个一样，都是编辑距离4， return前五个就行。。。
-(4)Leetcode 650
