@@ -16,8 +16,8 @@ class Solution:
         ans = sys.maxsize
         n = len(boxes)
         for i in range(n - 1):
-            #if left_min[i] == sys.maxsize or right_min[i + 1] == sys.maxsize:
-            #    continue
+            if left_min[i] == sys.maxsize or right_min[i + 1] == sys.maxsize: # 必须加上这条因为题目要求找到两个区间
+                continue
             ans = min(ans, left_min[i] + right_min[i + 1])
         if ans == sys.maxsize:
             return -1
