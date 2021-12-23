@@ -5,8 +5,8 @@ Upstart
 41 · Maximum Subarray
 975 · 2 Keys Keyboard
 120 · Word Ladder
+433 · Number of Islands
 
 To-do
 https://www.1point3acres.com/bbs/thread-831238-1-1.html
-(1) 433 · Number of Islands
 (2) 第一轮： 给一个loan数量，给APR （比如借了10k，apr：18%），利息固定，每个月还钱。但是这个人换了3个月1000后，再也不还了，求现在欠多少钱。。。因为数据给我了是dataframe形式，我就开始用pandas来导入，join，分析，结果发现直接写个函数求一下就行了。。没时间了。。。
