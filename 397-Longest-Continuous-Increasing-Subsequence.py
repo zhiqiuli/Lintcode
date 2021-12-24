@@ -4,6 +4,8 @@ class Solution:
     @return: an integer
     """
     def longestIncreasingContinuousSubsequence(self, A):
+        # dp[i] 在i位置上的LIS长度是多少
+        # dp[i+1]=dp[i]+1 if A[i+1] > A[i] else dp[i+1]=1
         if not A:
             return 0
         lic, ldc, max_len = 1, 1, 1 # 在i处的最长的增序列/降序列
