@@ -14,3 +14,16 @@ class Solution:
             else:
                 f[i] = f[i - 1] + nums[i]
         return max(f)
+    
+    
+class Solution:
+    """
+    @param nums: A list of integers
+    @return: A integer indicate the sum of max subarray
+    """
+    def maxSubArray(self, nums):
+        # maxSubArray ended @ i -> dp[i]
+        dp = nums[:]
+        for i in range(1, len(nums)):
+            dp[i] = max(dp[i], dp[i - 1] + nums[i])
+        return max(dp)
