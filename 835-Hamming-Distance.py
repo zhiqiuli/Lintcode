@@ -5,10 +5,9 @@ class Solution:
     @return: return an integer, denote the Hamming Distance between two integers
     """
     def hammingDistance(self, x, y):
-        # write your code here
-        ans = 0
+        diff_count = 0
         for i in range(31, -1, -1):
-            a = (x >> i) & 1 # 取出bit 0或1
-            b = (y >> i) & 1
-            if a != b: ans += 1
-        return ans
+            diff_count += (x & 1) ^ (y & 1)
+            x >>= 1
+            y >>= 1
+        return diff_count
