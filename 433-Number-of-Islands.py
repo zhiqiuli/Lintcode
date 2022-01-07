@@ -33,7 +33,7 @@ class Solution:
                 next_y = y + delta_y
                 if not self.is_valid(grid, next_x, next_y, visited):
                     continue
-                queue.append((next_x, next_y)) # queue.append()紧跟visited.add()
+                queue.append((next_x, next_y)) # 注意：queue.append()紧跟visited.add()，queue和visited总是在一起
                 visited.add((next_x, next_y))
 
     def is_valid(self, grid, x, y, visited):
