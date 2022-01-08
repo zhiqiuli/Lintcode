@@ -89,8 +89,9 @@ strong multicollinearity problems or that the design matrix is singular.
 
 
 Question 2.
-When doing the multiple linear regression problem, one column A is wrongly copied twice. What is the consequence?
-Parameter won't change but the confidence interval (the range) would shrink by approx sqrt(2).
+When doing the linear regression, if the dataset is wrongly copied twice. What is the consequence?
+The estimated parameter won't change but the confidence interval (or the c.i. range) could shrink by approx sqrt(2).
+
 
 Table 1.
 

@@ -10,3 +10,30 @@
 To-do
 https://www.1point3acres.com/bbs/thread-831238-1-1.html
 (2) 第一轮： 给一个loan数量，给APR （比如借了10k，apr：18%），利息固定，每个月还钱。但是这个人换了3个月1000后，再也不还了，求现在欠多少钱。。。因为数据给我了是dataframe形式，我就开始用pandas来导入，join，分析，结果发现直接写个函数求一下就行了。。没时间了。。。
+
+
+To-do
+
+1. numerical and categorical variable encoding
+
+(done) 2. generative model vs. discriminative model
+https://www.analyticsvidhya.com/blog/2021/07/deep-understanding-of-discriminative-and-generative-models-in-machine-learning/
+
+(done) 3. unsupervised learning - K-means Clustering
+(1) Select K clusters
+(2) Randomly pick K points from the data
+(3) Calculate the distance for each point i vs. k cluster and assign i^th point to k^th cluster
+(4) Calculate the center of k^th cluster
+(5) Repeat the iteration until the clusters centroids do not change anymore
+
+How to choose K? Based on judgement/observations;
+				 Based on the total variation reduction vs. different K values;
+
+4. imbalanced data - sampling method & smot
+
+
+5. TF-IDF
+
+6. the area under curve (AUC) of receiver operating characteristics curves or ROC curves
+
+7. Pointwise vs. Pairwise vs. Listwise Learning to Rank
