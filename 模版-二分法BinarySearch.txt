@@ -10,7 +10,7 @@ public int binarySearch (int left, int right){
 			start = mid;
 		}
 	}
-	if (condition(start)) return start;
+	if (condition(start)) return start; ### 这个部分和if里面的正好相反。如果这里是start先，那if(condition(mid))则是end先。 ###
 	if (condition(end)) return end;
 	return -1
 }
