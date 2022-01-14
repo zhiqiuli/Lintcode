@@ -8,7 +8,7 @@ class Solution:
     """
     def canFinish(self, numCourses, prerequisites):
         edges  = {i: [] for i in range(numCourses)} 
-        degree = {i: 0  for i in range(numCourses)}
+        degree = {i: 0  for i in range(numCourses)} # 记录每个node的indegree是多少
         for i, j in prerequisites:
             edges[j].append(i)
             degree[i] += 1
@@ -20,6 +20,6 @@ class Solution:
             q = queue.popleft()
             for n in edges[q]:
                 degree[n] -= 1
-                if degree[n] == 0:
+                if degree[n] == 0: # queue中都是indegree为0的nodes
                     queue.append(n)
         return numCourses == level
