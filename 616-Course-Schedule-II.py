@@ -20,13 +20,12 @@ class Solution:
 
         while queue:
             q = queue.popleft()
-            order.append(q)
+            order.append(q) # pop之后放入到order中
             for n in edges[q]:
                 degrees[n] -= 1
-                if degrees[n] == 0:
+                if degrees[n] == 0: # indegree==0 时放入queue
                     queue.append(n)
         
         if len(order) == numCourses:
             return order
-        else:
-            return []
+        return []
