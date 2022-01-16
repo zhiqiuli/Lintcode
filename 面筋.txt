@@ -39,3 +39,23 @@ How to choose K? Based on judgement/observations;
 7. Pointwise vs. Pairwise vs. Listwise Learning to Rank
 
 8. 151 · Best Time to Buy and Sell Stock III
+
+
+To-do's
+
+1. 616 · Course Schedule II
+
+2. 974 · 01 Matrix
+
+3. Leetcode 1345. Jump Game IV
+
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=774229&ctid=232530
+
+电面：
+1. 美国小哥 全程聊简历 RNN gradient varnishing/dropout 等基础知识 BQ 轻松水过
+2. 中国小哥 zoom出了点问题 浪费20分钟 coding: binary search + greedy 小哥还帮我debug 大赞
+第二天收到onsite 邀请
+1. 印度小哥聊简历 bias vs variance dropout cnn vs dnn 全程嘻嘻哈哈 水过
+2. 中东小哥 十分严格 开始就说不许上网查，不许这，不许那；coding 两个线段是否相交 Ans: 求 slope，求交点，判断是否线段上；follow up：平面呢？N维呢？答用matrix （不知道对不对 请大神指点一二）
+3. 中国（可能香港）小哥 全程黑脸不屑口吻 一开始就很不友善 感觉栽在了这一轮 聊简历 但是深挖 a lot. 简历提了一嘴GAN，感觉捅到了马蜂窝，一直在问GAN. 生成GAN图片用什么metrics衡量质量（不会 说眼睛看）；除了GAN还有哪些图片生成算法（答autoencoder）；生成模型和d‍‍‍‍‌‌‌‌‌‍‌‌‌‌‍‍‌‍iscriminative模型有哪些区别；什么是KL divergence；如何避免mode cllapse；答得不太好 面完想打人 隔天收到拒信
+onsite体验一般 主要感觉面试官都不太friendly 求大米
