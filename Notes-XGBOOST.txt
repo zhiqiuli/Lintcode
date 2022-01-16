@@ -1,0 +1,90 @@
+------------------------
+key: l    le   lea  lead
+------------------------
+val: lead lead lead lead
+     lady
+------------------------
+
+(1) save prefix and check if current prefix exists in the hash map
+
+(2) 每加入一个新单词 check之后是否可行
+
+第一词填ball
+第二词想填area
+需要check (1) a 开头的是否存在 (2) le la 开头的是否存在
+ball
+area
+le
+la
+
+
+'a' = 1,2,3
+
+'ab' = 11, 12, 13, 
+
+
+Regression Problem...
+
+
+
+Gradient Boosted Machine
+
+(*) AdaBoost
+- A forest of trees (or stumps) are made with AdaBoost, the trees (or stumps) are usually just a node and two leaves.
+- Terminology: a tree with a node and two leaves is called a stump. A stump is a weak learner as it only takes 1 feature, unlike a full tree.
+- Three important ideas behind AdaBoost ...
+[1] AdaBoost combines a lot of weak learners to make the classification. The weak learners are almost always stumps.
+[2] In AdaBoost, some stumps get more say in the final classification than others; while each tree in Random Forest has the equal vote weight.
+[3] In the forest of stumps made with AdaBoost, order is important. The error first stump makes influences how the second stump is made. While in the Random Forest, each decision tree is made independently of each other.
+
+If we have a weighted Gini function, then we use it with the sample weights, otherwise we use sample weights to make a new dataset that reflects those weights.
+
+(*) Gradient Boost
+- When compared to AdaBoost ...
+  AdaBoost starts to build a stump from the training data. The amount of say that the stump has on the final output is based on how well it compensated for those previous errors. Then AdaBoost builds the next stump based on errors that the previous stump made. 
+
+  GB starts by making a single leaf, instead of a tree or stump. This leaf represents an intial guess for the Weights (variable) of all of the samples. When trying to predict a continuous value like Weight (variable), the first guess is the average value. Then GB builds a tree. *This tree is usually larger than a stump*.
+
+- GB starts with a leaf that is the average value of the variable we want to predict. A tree is usually larger than a stump.
+- GB builds another tree based on the errors made by the previous tree.
+- GB predicts the residuals and (the predicted value) = (the previous predicted) + (learning rate) * (predicted residual).
+- Average + Learning Rate * (Residual_1st Tree) + Learning Rate * (Residual_2nd Tree) + ...
+
+(*) XGBoost
+- XGBoost uses a unique regression tree that called an "XGBoost tree".
+- The procedures of building XGBoost ...
+	(1) Each tree starts out as a single leaf.
+	(2) Calculate "similarity scores" (or "quality score") and gains to determine how to split the data
+	(3) Build new trees based on previous residuals
+	(4) We prune the trees by calculating the difference between gain values and a user defined Tree complexity Parameter (gamma).
+	(5) Predict based on the residuals
+	* "lambda" is the regularization parameter that prevents over-training the model.
+	* "lambda" will reduce the prediction's sensitivity to this individual/isolated observation.
+	* "lambda" results in more prunings, by shrinking similarity scores and it results in smaller output values for the leaves.
+	* "gamma" is the model complicity paratmeter. A large value is to prevent the model becoming more complicated.
+
+	For regression problem:
+		Similarity Score = Sum of Residuals, Squared / (Number of Residuals + lambda)
+		Output Value = Sum of Residuals / (Number of Residuals + lambda)
+
+	For classification problem:
+		Similarity Score = Sum of Residuals, Squared / (Sum of (Prev Prob_i * (1 - Prev Prob_i)) + lambda)
+
+	What Makes XGBoost Fast and Powerful?
+	https://medium.com/hypatai/what-makes-xgboost-fast-and-powerful-dc315313ee23
+	- Approximate Greedy Algorithm
+	  It means that instead of testing all possible thresholds, we only test the quantiles. Default about 33 quantiles.
+	- Parallel Learning
+	  Each block performs the sorting operation in parallel, then results are merged.
+	- Weighted Quantile Sketch (for classification problem)
+	  WQS is the technique for obtaining the quantile values after parallel sorting operations by merging results in a histogram.
+	- Sparsity-Aware Split Finding
+	  Tells us how to build trees with missing data and how to deal with new obs when there is missing data.
+	- Cache-Aware access
+	XGBoost puts Gradients & Hessians in the Cache so that it can rapidly calculate similarity score and output values.
+	- Blocks for out-of-core computation
+	Utilize the harddisk to store different datasets
+
+
+
+AdaBoost -> (Trees) -> Gradient Boost -> (Regularizations with lambda and gamma) -> XGBoost
