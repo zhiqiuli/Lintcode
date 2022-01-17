@@ -11,6 +11,7 @@ class Solution:
         graph = self.build_graph(seqs)
         return self.top_sort(graph) == org
     
+    # 也可以直接写在主函数里，区别不大
     def top_sort(self, graph):
         indegree = self.get_indegree(graph)
         queue = collections.deque([x for x in indegree if indegree[x] == 0])
