@@ -35,16 +35,17 @@ class Solution:
 
     # [1,2], [1,3] -> 1: (2, 3)
     # [1,4], [2,3] -> 1: (4) & 2: (3)
+    # [5,2,6,3] -> 5:2, 2:6, 6:3, 3:()
     def build_graph(self, seqs):
         graph = {}
         for seq in seqs:
             for node in seq:
                 if node not in graph:
-                    graph[node] = set()
+                    graph[node] = set() # set和list都可以，set应该更快一些
 
         for seq in seqs:
             for i in range(1, len(seq)):
-                graph[seq[i - 1]].add(seq[i])
+                graph[seq[i - 1]].add(seq[i]) # 建立graph时依据的是前一个节点->下一个节点，[5,2,6,3] -> 5:2, 2:6, 6:3, 3:()
         
         return graph
 
