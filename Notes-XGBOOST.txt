@@ -1,5 +1,6 @@
 AdaBoost / Gradient Boosted Machine / XGBoost
 
+
 (*) AdaBoost
 - A forest of trees (or stumps) are made with AdaBoost, the trees (or stumps) are usually just a node and two leaves.
 - Terminology: a tree with a node and two leaves is called a stump. A stump is a weak learner as it only takes 1 feature, unlike a full tree.
@@ -11,6 +12,8 @@ AdaBoost / Gradient Boosted Machine / XGBoost
 AdaBoost minimizes *the exponential loss* criterion via a forward-stagewise additive modeling approach.
 
 If we have a weighted Gini function, then we use it with the sample weights, otherwise we use sample weights to make a new dataset that reflects those weights.
+
+
 
 (*) Gradient Boost
 - When compared to AdaBoost (classifier) ...
@@ -27,17 +30,17 @@ If we have a weighted Gini function, then we use it with the sample weights, oth
 
 (*) AdaBoost vs. Gradient Boosting
 
-- In Gradient Boosting, ‘shortcomings’ (of existing weak learners) are identified by gradients.
 - In AdaBoost, ‘shortcomings’ are identified by high-weight data points.
-
-The main differences, therefore, are that Gradient Boosting is a generic algorithm to find approximate solutions to the additive modeling problem (see ESL p.337), while AdaBoost can be seen as a special case with a particular loss function (the exponential loss function). Hence, Gradient Boosting is much more flexible.
-
-On the other hand, AdaBoost can be interpreted from a much more intuitive perspective and can be implemented without the reference to gradients by reweighting the training samples based on classifications from previous learners.
+- In Gradient Boosting, ‘shortcomings’ (of existing weak learners) are identified by gradients.
 
 History:
 1. Invent AdaBoost, the first successful boosting algorithm [Freund et al., 1996, Freund and Schapire, 1997]
 2. Formulate AdaBoost as gradient descent with a special loss function [Breiman et al., 1998, Breiman, 1999]
 3. Generalize AdaBoost to Gradient Boosting in order to handle a variety of loss functions [Friedman et al., 2000, Friedman, 2001]
+
+The main differences, therefore, are that Gradient Boosting is a generic algorithm to find approximate solutions to the additive modeling problem (see ESL p.337), while AdaBoost can be seen as a special case with a particular loss function (the exponential loss function). Hence, Gradient Boosting is much more flexible. (Note here ESL talks about AdaBoost and GB as a classifier algorithm).
+
+On the other hand, AdaBoost can be interpreted from a much more intuitive perspective and can be implemented without the reference to gradients by reweighting the training samples based on classifications from previous learners.
 
 
 
@@ -78,4 +81,4 @@ History:
 
 
 
-AdaBoost -> Gradient Boost -> (Regularizations with lambda and gamma) -> XGBoost
+AdaBoost -> Gradient Boost -> (Regularizations + Computation Optimization) -> XGBoost
