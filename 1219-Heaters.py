@@ -13,6 +13,9 @@ class Solution:
         houses.sort()
         heaters.sort()
         res = 0
+        # 寻找每一个house最近的heater
+        # 为何不用heater作为loop
+        # 考虑houses=[1,2,3] heaters=[2]，假若heater==2时直接使用二分法查找house，return的值为0，没有具体意义
         for house in houses:
             res = max(res, self.findNearest(house, heaters))
         return res
