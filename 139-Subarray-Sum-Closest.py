@@ -1,6 +1,7 @@
 '''
 先计算prefix_sum
-然后prefix_sum的diff越小 说明两组index越接近0
+排序
+prefix_sum中相邻的两个元素diff越小 说明两组index越接近0
 '''
 class Solution:
     """
