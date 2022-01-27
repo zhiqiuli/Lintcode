@@ -16,6 +16,7 @@ class Solution:
         if (i, j) in memo:
             return memo[(i, j)]
         curr_max = 0
+        # 保留i和j，burst之间的所有气球
         for k in range(i+1, j):
             left = self.memo_search(nums, i, k, memo)
             rite = self.memo_search(nums, k, j, memo)
