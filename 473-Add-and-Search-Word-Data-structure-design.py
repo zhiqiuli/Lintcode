@@ -27,15 +27,14 @@ class WordDictionary:
         return self.dfs(word, self.root, 0)
     
     def dfs(self, word, node, index):
-        if node is None:
-            return False
-
         if len(word) == index:
             return node.is_word
-        
+
         char = word[index]
         if char != '.':
-            return self.dfs(word, node.children.get(char), index + 1)
+            if char not in node.children:
+                return False
+            return self.dfs(word, node.children[char], index + 1)
         
         for child in node.children:
             if self.dfs(word, node.children[child], index + 1):
