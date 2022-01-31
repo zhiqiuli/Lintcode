@@ -56,3 +56,27 @@ class Solution:
             for j in range(1, arrLen + 1):
                 dp[i][j] = dp[i-1][j-1] + dp[i-1][j] + dp[i-1][j+1]
         return dp[-1][1] % (10 ** 9 + 7)
+
+    
+
+# APP5: DP. Optimize APP4 using rolling array because you only need to know the previous step status
+# But if you implemented like below, you're still allocating steps + 1 times new array
+# If it doesn't trigger the gc, space is still O(steps * min(arrLen, steps + 1)) 
+# Time: O(steps * min(arrLen, steps + 1)) Space: O(steps * min(arrLen, steps + 1))
+# Result: Runtime: 50% Memory: 100%
+class Solution:
+    """
+    @param steps: steps you can move
+    @param arrLen: the length of the array
+    @return: Number of Ways to Stay in the Same Place After Some Steps
+    """
+    def numWays(self, steps, arrLen):
+        arrLen = min(arrLen, steps)
+        dp    = [0] * (arrLen + 2)
+        dp[1] = 1
+        dp_prev = dp[:]
+        for i in range(1, steps + 1):
+            for j in range(1, arrLen + 1):
+                dp[j] = dp_prev[j-1] + dp_prev[j] + dp_prev[j+1]
+            dp_prev = dp[:]
+        return dp[1] % (10 ** 9 + 7)
