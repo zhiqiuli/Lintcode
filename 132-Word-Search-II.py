@@ -25,10 +25,13 @@ class Solution:
         return list(res)
 
     def dfs(self, board, x, y, word, word_set, prefix_set, visited, res):
-        # 如果当前结果不存在prefix_set中 之后肯定也不会 应该是prune
+        # 如果当前结果不存在prefix_set中，之后肯定也不会，prune
         if word not in prefix_set:
             return
-        # 递归出口
+        
+        # Key
+        # 这个地方不需要退出
+        # 譬如说words中有[se,see]，找到se之后可以继续寻找see
         if word in word_set:
             res.add(word)
         
