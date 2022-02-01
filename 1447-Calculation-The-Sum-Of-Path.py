@@ -1,3 +1,5 @@
+分成4段做dp，0->1->2->3->4，然后最终结果相乘
+
 """
 Definition for a point.
 class Point:
@@ -18,8 +20,9 @@ class Solution:
         MOD = 10**9 + 7
         total = 1
         n = len(points)
-
+        
         for i in range(1, n):
+            # KEY
             # (0, 0)->(1, 1) OK
             # (2, 1)->(1, 2) impossible then return 0
             if points[i][1] < points[i-1][1]:
