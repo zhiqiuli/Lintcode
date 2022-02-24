@@ -1,0 +1,34 @@
+完全背包
+
+多重背包
+
+
+
+###
+### 0-1 Knapsack Problem
+###
+
+Problem def: Given N items, w[i] is the weight of the i-th item and v[i] is value of the i-th item. Given a knapsack with capacity W. Maximize the total value. Each item can be used 0 or 1 time.
+
+dp[i][j] = max value of using first i items and total weigh is exact j.
+
+dp[i][j] = max(dp[i-1][j],             # i-th item not used
+			   dp[i-1][j-w[i]] + v[i]) # i-th item used
+
+
+
+dp[i][w]定义如下：对于前i个物品，当前背包容量为w，这种情况下可以装的最大价值是dp[i][w]。
+
+for i in [1..N]:
+	for w in [1..W]:
+		dp[i][w] = max(
+			dp[i-1][w],
+			dp[i-1][w - wt[i-1]] + val[i-1]
+			)
+return dp[N][W]
+
+###
+### Unbounded Knapsack Problem
+###
+
+Problem def: Given N items, w[i] is the weight of the i-th item and v[i] is value of the i-th item. Given a knapsack with capacity W. Maximize the total value. Each item can be used 0, 1, 2, ... times.
