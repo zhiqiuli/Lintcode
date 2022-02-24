@@ -1,5 +1,14 @@
-def getMinimumStringArray(self, tagList, allTags):
-        # Write your code here
+from typing import (
+    List,
+)
+
+class Solution:
+    """
+    @param tag_list: The tag list.
+    @param all_tags: All the tags.
+    @return: Return the answer
+    """
+    def get_minimum_string_array(self, tagList: List[str], allTags: List[str]) -> int:
         if not tagList:
             return 0
         if not allTags or len(tagList) > len(allTags):
@@ -13,7 +22,9 @@ def getMinimumStringArray(self, tagList, allTags):
         left, right = 0, 0
         min_l = sys.maxsize
         
+        # 固定住左边 for left & while right
         for left in range(n):
+            # 一直移动右边
             while right < n and len(cnt) < len(tagList):
                 tag = allTags[right]
                 
