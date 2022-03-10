@@ -6,7 +6,7 @@ class Solution:
         
         n = len(nums)
 
-        # dp[i][0] := max len ends w/ nums[i] has 0 zeros
+        # dp[i][0] := max len ends w/ nums[i] has 0 zeros (all 1's)
         # dp[i][1] := max len ends w/ nums[i] has 1 zero
         dp = [[0, 0] for _ in range(n)]
         
