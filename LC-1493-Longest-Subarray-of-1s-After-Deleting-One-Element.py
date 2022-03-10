@@ -43,5 +43,5 @@ class Solution:
             while l < r and r - l > res:
                 res -= nums[l]
                 l += 1
-            ans = max(ans, r - l)
+            ans = max(ans, r - l) # r-l+1 如果题目要求是replace
         return ans
