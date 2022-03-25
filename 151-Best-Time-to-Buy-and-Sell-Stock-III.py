@@ -14,5 +14,5 @@ class Solution:
             sell1 = max(sell1, buy1  + prices[i])
             buy2  = max(buy2 , sell1 - prices[i])
             sell2 = max(sell2, buy2  + prices[i])
-        return max(sell1, sell2)
-
+        # return max(sell1, sell2)
+        return sell2 # 只需要return sell2即可，sell2包含了sell1的profit
