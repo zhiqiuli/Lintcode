@@ -1,3 +1,24 @@
+# from question 151
+
+from typing import (
+    List,
+)
+
+class Solution:
+    """
+    @param prices: Given an integer array
+    @return: Maximum profit
+    """
+    def max_profit(self, prices: List[int]) -> int:
+        if not prices: return 0
+        
+        buy  = -prices[0]
+        sell = 0
+        for i in range(1, len(prices)):
+            buy  = max(buy , sell - prices[i])
+            sell = max(sell, buy  + prices[i])
+        return sell
+
 class Solution:
     """
     @param prices: Given an integer array
