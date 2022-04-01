@@ -22,7 +22,7 @@ class Solution:
         left, right = 0, 0
         min_l = sys.maxsize
         
-        # 固定住左边 for left & while right
+        # 固定住左边
         for left in range(n):
             # 一直移动右边
             while right < n and len(cnt) < len(tagList):
