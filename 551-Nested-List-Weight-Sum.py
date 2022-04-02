@@ -41,3 +41,23 @@ class Solution(object):
 
         self.helper(nestedList.getList(), level + 1)
         return
+
+    
+    
+class Solution(object):
+    # @param {NestedInteger[]} nestedList a list of NestedInteger Object
+    # @return {int} an integer
+    def depthSum(self, nestedList):
+        if not len(nestedList): return 0
+        stack = []
+        res = 0
+        for n in nestedList:
+            stack.append((n, 1))
+        while stack:
+            n, level = stack.pop()
+            if n.isInteger():
+                res += (n.getInteger() * level)
+            else:
+                for i in n.getList():
+                    stack.append((i, level+1))
+        return res
