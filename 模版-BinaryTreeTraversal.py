@@ -48,16 +48,20 @@ class Solution:
         result = []
         stack = []
         
+        # 1.先走到最左下角
         while root:
             stack.append(root)
             root = root.left
         
         while stack:
+            # 2.pop的时候把元素append到res
             curNode = stack.pop()
             result.append(curNode.val)
             
+            # 3.当right存在时再走一步right
             if curNode.right:
                 curNode = curNode.right
+                # 4.和1.很相似
                 while curNode:
                     stack.append(curNode)
                     curNode = curNode.left
