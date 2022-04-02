@@ -1,3 +1,6 @@
+关键点：
+    1. dfs函数需要返回三个值，A是否在left，B是否在left，left的LCA（可以为None如果left没有LCA）
+
 """
 Definition of TreeNode:
 class TreeNode:
