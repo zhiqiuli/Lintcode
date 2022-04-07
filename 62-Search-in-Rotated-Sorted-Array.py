@@ -20,25 +20,25 @@ class Solution:
             # case 1 when mid (^) is on the 1st part
             # 4 5 6 7 1 
             #     ^
-            if A[mid] >= A[start]:
+            if A[mid] >= A[start]: # 如果第一部分是递增的
                 # case 1.1 when target (@) is on the 1st part of 1st part
                 # 4 5 6 7 1 
                 #   @ ^
-                if A[start] <= target <= A[mid]:
+                if A[start] <= target <= A[mid]: # target就在第一部分递增的里面 直接使用模版的end
                     end = mid
                 # case 1.2 when mid is on the 2nd part of 1st part
                 else:
                     start = mid
-            # case 2 when mid is on the 2nd part
+            # case 2 when mid is on the 2nd part # 如果第二部分是递增的
             else:
-                if A[mid] <= target <= A[end]:
+                if A[mid] <= target <= A[end]: # target在第二部分递增的里面 
                     start = mid
                 else:
                     end = mid
         
-        if A[start] == target:
+        if A[start] == target: # 需要严格等于
             return start
-        if A[end] == target:
+        if A[end] == target: # 需要严格等于
             return end
         
         return -1
