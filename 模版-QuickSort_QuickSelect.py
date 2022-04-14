@@ -42,7 +42,7 @@ class Solution:
      if start >= end: return
      l, r = start, end
      m = (l + r) // 2
-     target = nums[m]
+     target = nums[m] # NOTE: 必须保存在单独变量中，如果直接使用nums[m]，在while循环中会nums[m]会发生变化。
      while l <= r:
          while l <= r and nums[l] < target:
              l += 1
