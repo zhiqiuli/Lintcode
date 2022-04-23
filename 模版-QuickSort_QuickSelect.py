@@ -4,7 +4,7 @@
 class Solution:
  def findKthLargest(self, nums: List[int], k: int) -> int:
      # kth larget = n - k th smallest
-     return self.partition(nums, 0, len(nums) - 1, len(nums) - k) # 如果降序 ..., k)
+     return self.partition(nums, 0, len(nums) - 1, len(nums) - k) # 如果降序 self.partition(..., k)
 
  def partition(self, nums, start, end, k):
      # find kth smallest element in nums, here k is representing the index, and it starts from 0
