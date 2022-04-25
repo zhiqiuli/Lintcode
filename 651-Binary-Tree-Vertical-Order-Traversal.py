@@ -19,24 +19,13 @@ class Solution:
     @return: the vertical order traversal
     """
     def vertical_order(self, root: TreeNode) -> List[List[int]]:
-        if not root:
-            return []
-        pos   = 0
-        ###
-        ### BFS用queue
-        ###
-        queue = collections.deque([(pos, root)])
-        node_per_level = {}
+        queue = collections.deque()
+        results = collections.defaultdict(list) # 使用defaultdict，默认的类别是list
+        queue.append((0, root))
         while queue:
-            pos_, node = queue.popleft()
+            pos, node = queue.popleft()
             if node:
-                if pos_ in node_per_level:
-                    node_per_level[pos_].append(node.val)
-                else:
-                    node_per_level[pos_] = [node.val]
-                queue.append((pos_ - 1, node.left ))
-                queue.append((pos_ + 1, node.right))
-        res = []
-        for key in sorted(node_per_level.keys()):
-            res.append(node_per_level[key][:])
-        return res
+                results[pos].append(node.val)
+                queue.append((pos - 1, node.left))
+                queue.append((pos + 1, node.right))
+        return [results[i] for i in sorted(results)] # O(Nlog(N))
