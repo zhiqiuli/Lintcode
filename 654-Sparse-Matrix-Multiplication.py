@@ -1,3 +1,5 @@
+# 题目关键在于如何 initialize the row/col arrays
+
 from typing import (
     List,
 )
