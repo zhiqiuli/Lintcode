@@ -13,6 +13,32 @@ class Interval(object):
         self.end = end
 """
 
+###
+### simple solution sort + append
+###
+class Solution:
+    """
+    @param intervals: interval list.
+    @return: A new interval list.
+    """
+    def merge(self, intervals: List[Interval]) -> List[Interval]:
+        if not intervals:
+            return []
+        intervals = sorted(intervals, key=lambda x:x.start) # KEY 按照区间start进行排序
+        res = []
+        left, right = intervals[0].start, intervals[0].end
+        for i in range(1, len(intervals)):
+            curr_left, curr_right = intervals[i].start, intervals[i].end
+            if curr_left > right:
+                res.append(Interval(left, right))
+                left, right = curr_left, curr_right
+            else:
+                right = max(curr_right, right) # KEY 合并时取大的区间
+        res.append(Interval(left, right))
+        return res
+    
+    
+    
 class Solution:
     """
     @param intervals: interval list.
