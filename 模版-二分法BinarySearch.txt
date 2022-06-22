@@ -5,7 +5,7 @@ public int binarySearch (int left, int right){
 	while (start + 1 < end) {
 		int mid = start + (end - start) / 2
 		if (condition(mid)) {
-			end = mid; # 找右边部分的第一个，assign右边(end)
+			end = mid; # 找右边部分的第一个，则修改右边(end)
 		} else {
 			start = mid;
 		}
@@ -22,7 +22,7 @@ public int binarySearch (int left, int right){
 	while (start + 1 < end) {
 		int mid = start + (end - start) / 2
 		if (condition(mid)) {
-			start = mid; # 找左边部分的最后一个，assign左边(start)
+			start = mid; # 找左边部分的最后一个，则修改左边(start)
 		} else {
 			end = mid;
 		}
