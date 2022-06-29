@@ -11,6 +11,18 @@ class Solution:
     """
     def max_profit(self, prices: List[int]) -> int:
         if not prices: return 0
+        profit = 0
+        for i in range(len(prices) - 1):
+            profit += max(0, prices[i + 1] - prices[i])
+        return profit
+
+class Solution:
+    """
+    @param prices: Given an integer array
+    @return: Maximum profit
+    """
+    def max_profit(self, prices: List[int]) -> int:
+        if not prices: return 0
         
         buy  = -prices[0]
         sell = 0
