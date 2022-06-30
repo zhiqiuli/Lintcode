@@ -1,5 +1,23 @@
-# https://www.lintcode.com/problem/159/description
-
+class Solution:
+    """
+    @param nums: a rotated sorted array
+    @return: the minimum number in the array
+    """
+    def find_min(self, nums: List[int]) -> int:
+        left, right = 0, len(nums) - 1
+        while left + 1 < right:
+            # 此时数组已经排好序了，直接取第一个数即可
+            if nums[left] <= nums[right]:
+                return nums[left]
+            # 此时数组肯定是rotated的，需要进一步判断，取存在最小值的部分即可
+            mid = (left + right) // 2
+            if nums[mid] >= nums[left]:
+                left = mid
+            else:
+                right = mid
+        return min(nums[left], nums[right])
+    
+    
 class Solution:
     """
     @param nums: a rotated sorted array
