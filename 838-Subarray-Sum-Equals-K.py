@@ -11,7 +11,8 @@ class Solution:
     def subarray_sum_equals_k(self, nums: List[int], k: int) -> int:
         n = len(nums)
         sum_ = 0
-        presum_count = {0:1} # nums=[1] & k=1
+        # 假设 nums=[1] & k=1
+        presum_count = {0:1}
         res = 0
         for i in range(len(nums)):
             sum_ += nums[i]
