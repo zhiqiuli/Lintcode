@@ -1,7 +1,4 @@
-from typing import (
-    List,
-)
-
+### Option 1
 class Solution:
     """
     @param nums: an array of integers
@@ -37,4 +34,34 @@ class Solution:
             if i == j:
                 j += 1
 
+        return res
+
+### Option 2
+class Solution:
+    """
+    @param nums: an array of integers
+    @param k: an integer
+    @return: the number of unique k-diff pairs
+    """
+    def find_pairs(self, nums: List[int], k: int) -> int:
+        # Write your code here
+        visited = {}
+        for num in nums:
+            if num not in visited:
+                visited[num] = 1
+            else:
+                visited[num] += 1
+ 
+        if k == 0:
+            res = 0
+            for key in visited.keys():
+                if visited[key] > 1:
+                    res += 1
+            return res
+ 
+        res = 0
+        for key in visited.keys():
+            if key - k in visited.keys():
+                res += 1
+ 
         return res
