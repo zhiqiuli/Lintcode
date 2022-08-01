@@ -33,4 +33,4 @@ class Solution:
     
     def is_valid(self, x, y, matrix, h):
         row, col = len(matrix), len(matrix[0])
-        return 0 <= x < row and 0 <= y < col and matrix[x][y] < h # strictly increasing!
+        return 0 <= x < row and 0 <= y < col and matrix[x][y] < h # 最后一项是限制条件
