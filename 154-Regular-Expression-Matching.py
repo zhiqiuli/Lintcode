@@ -19,9 +19,9 @@ class Solution:
         
         # s='aab' & p='a*b'
         if j + 1 < len(p) and p[j + 1] == '*':
-                      # s='aab' & p='b'
+                      # s='aab' & p='b' 等价于a*不match任何letter
             matched = self.dfs(s, p, i, j + 2, memo) or \
-                      # good, then --------------------> s='ab' & p='a*b'
+                      # good, then --------------------> s='ab' & p='a*b' 等价于a* match第一个字符
                       ((s[i] == p[j] or p[j] == '.') and self.dfs(s, p, i + 1, j, memo))
         # s='aab' & p='abc'
         else:          # good, then -------------------> s='ab' & p='bc'
