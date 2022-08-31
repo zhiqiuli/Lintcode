@@ -1,6 +1,12 @@
 '''
 九章quick select 模板 -  LeetCode 215. Kth Largest Element in an Array
+
+The time complexity for the average case for quick select is O(n) (reduced from O(nlogn) — quick sort).
+The worst case time complexity is still O(n²), it happens when always picks the largest/smallest as the pivot.
+But by using a random pivot , the worst case can be avoided in most cases.
+So, on an average quick select provides a O(n) solution to find the kth largest/smallest element in an unsorted list.
 '''
+
 class Solution:
  def findKthLargest(self, nums: List[int], k: int) -> int:
      # kth larget = n - k th smallest
