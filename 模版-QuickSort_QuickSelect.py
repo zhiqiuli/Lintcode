@@ -21,7 +21,7 @@ class Solution:
      l, r = start, end
      p = nums[(l + r) // 2]
      while l <= r:
-         while l <= r and nums[l] < p: # 如果是降序 nums[l] > p (注意这里是绝对大于>)
+         while l <= r and nums[l] < p: # 如果是降序 nums[l] > p (注意!这里是绝对大于>)
              l += 1
          while l <= r and nums[r] > p: # 如果是降序 nums[r] < p
              r -= 1
@@ -33,7 +33,7 @@ class Solution:
          return self.partition(nums, start, r, k)
      if k >= l:
          return self.partition(nums, l, end, k)
-     return nums[k] # (注意这里需要return[k])
+     return nums[k] # (注意!这里需要return[k])
 
 '''
 quick sort 模板 - LeetCode 912. Sort an Array
