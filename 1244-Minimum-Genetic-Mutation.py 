@@ -1,0 +1,37 @@
+from typing import (
+    List,
+)
+from collections import deque
+class Solution:
+    """
+    @param start: 
+    @param end: 
+    @param bank: 
+    @return: the minimum number of mutations needed to mutate from "start" to "end"
+    """
+    def min_mutation(self, start: str, end: str, bank: List[str]) -> int:
+        if not bank or len(bank) == 0:
+            return -1
+        bank = set(bank)
+        queue = deque([start])
+        # a dict (or a set) is needed to track the distance so far
+        dist = {}
+        dist[start] = 0
+        while queue:
+            gene = queue.popleft()
+            for mutation in self.generate_mutation(gene):
+                if mutation == end and mutation in bank:
+                    return dist[gene] + 1
+                if mutation in bank and mutation not in dist:
+                    dist[mutation] = dist[gene] + 1
+                    queue.append(mutation)
+        return -1
+    
+    def generate_mutation(self, gene):
+        availables = ['A', 'C', 'G', 'T']
+        res = []
+        for i in range(len(gene)):
+            for new in availables:
+                if gene[i] != new:
+                    res.append(gene[:i] + new + gene[i+1:])
+        return res
