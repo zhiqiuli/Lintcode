@@ -1,3 +1,4 @@
+# 关键在于判断mid和缺口的关系，也就是mid在缺口的左边还是右边
 # https://www.lintcode.com/problem/62/description
 
 class Solution:
@@ -20,7 +21,7 @@ class Solution:
             # case 1 when mid (^) is on the 1st part
             # 4 5 6 7 1 
             #     ^
-            if A[mid] >= A[start]: # 如果第一部分是递增的
+            if A[mid] >= A[start]: # 如果第一部分是递增的，或者说mid在缺口的左边
                 # case 1.1 when target (@) is on the 1st part of 1st part
                 # 4 5 6 7 1 
                 #   @ ^
@@ -29,7 +30,7 @@ class Solution:
                 # case 1.2 when mid is on the 2nd part of 1st part
                 else:
                     start = mid
-            # case 2 when mid is on the 2nd part # 如果第二部分是递增的
+            # case 2 when mid is on the 2nd part # 如果第二部分是递增的，或者说mid在缺口的右边
             else:
                 if A[mid] <= target <= A[end]: # target在第二部分递增的里面 
                     start = mid
