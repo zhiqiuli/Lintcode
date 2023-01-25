@@ -17,10 +17,10 @@ class Solution:
         start, end = 0, len(nums) - 1
         while start + 1 < end:
             
-            # remove首位相同的元素
+            # remove首尾相同的元素
             while nums[start] == nums[start + 1] and start + 1 < end:
                 start += 1
-            while nums[end]   == nums[end - 1] and start + 1 < end:
+            while nums[end] == nums[end - 1] and start + 1 < end:
                 end -= 1
             
             mid = (start + end) // 2
