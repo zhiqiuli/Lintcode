@@ -17,11 +17,12 @@ class Solution:
         self.dfs(n, 2, [], res)
         return res
     
-    def dfs(self, n, index, path, res):
-        if len(path) != 0:
+    def dfs(self, n, prevFactor, path, res):
+        if len(path) > 0:
             res.append(path[:] + [n]) # 不同于别的dfs 此处不需要return 每一步都叠加factor
-        for factor in range(index, int(math.sqrt(n)) + 1):
-            if n % factor == 0:
-                path.append(factor)
-                self.dfs(n // factor, factor, path, res)
+        
+        for currFactor in range(prevFactor, int(math.sqrt(n)) + 1):
+            if n % currFactor == 0:
+                path.append(currFactor)
+                self.dfs(n // currFactor, currFactor, path, res)
                 path.pop()
