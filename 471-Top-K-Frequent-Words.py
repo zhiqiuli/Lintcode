@@ -19,8 +19,7 @@ class Solution:
         # 比较简单的做法就是先把所有元素存下来，然后再pop前k个元素
         h = []
         heapq.heapify(h)
-        for key in dic:
-            val = dic[key]
+        for key, val in dic.items():
             heapq.heappush(h, (-val, key))
 
         res = []
