@@ -27,3 +27,22 @@ class Solution:
         for i in range(1, len(nums)):
             dp[i] = max(dp[i], dp[i - 1] + nums[i])
         return max(dp)
+
+
+class Solution:
+    """
+    @param nums: A list of integers
+    @return: A integer indicate the sum of max subarray
+    """
+    def max_sub_array(self, nums: List[int]) -> int:
+        final_res = res = nums[0]
+        for num in nums[1:]:
+            # option 1
+            if res < 0:
+                res = num # 如果前一步的结果是负数，则直接使用num
+            else:
+                res += num
+            # option 2
+            # res = max(num, res + num) # 如果前一步的结果是负数，则直接使用num
+            final_res = max(final_res, res)
+        return final_res

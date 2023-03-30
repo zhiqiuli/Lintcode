@@ -1,3 +1,9 @@
+'''
+https://www.lintcode.com/problem/151/solution/56574
+
+无论题目中是否允许「在同一天买入并且卖出」这一操作，最终的答案都不会受到影响，这是因为这一操作带来的收益为零。
+'''
+
 from typing import (
     List,
 )
