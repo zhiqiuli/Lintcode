@@ -17,9 +17,13 @@ class Solution:
         while start + 1 < end:
             
             # 2
-            mid = start + int((end-start)/2)
+            mid = (start + end) // 2
 
-            # 3 如果nums[mid] >= target,则题解一定在左边，否则题解在右边
+	    # s       m       e
+	    # x x [o] o o o o o
+	    # s       e
+	    # x x [o] o o o o o
+	    # 3 如果nums[mid] >= target,则题解一定在左边，否则题解在右边
             if nums[mid] >= target:
                 end = mid
             else:
