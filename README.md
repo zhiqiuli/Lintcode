@@ -2,9 +2,9 @@
 
 https://www.lintcode.com/user/zqlee/
 
-Solved over 400+ problems on lintcode.com (as of 2022-11-3)
+Solved over 400+ problems on lintcode.com (as of 2024-2-25)
 
-Pass：400/2932
+Pass：408/2932
 Naive：20
 Easy：122
 Medium：229
