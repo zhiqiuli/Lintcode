@@ -16,7 +16,12 @@ class Solution:
                 left += 1
             while left + 1 < right and nums[right] == nums[right - 1]:
                 right -= 1
-
+            
+            # return the first element if it is a monotonic increasing array
+            # more efficient w/ this part but it works w/o this part
+            # if nums[right] > nums[left]:
+            #     return nums[left]
+            
             # the same as 159
             mid = (left + right) // 2
             if nums[mid] >= nums[left]:
