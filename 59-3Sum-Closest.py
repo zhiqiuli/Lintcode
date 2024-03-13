@@ -5,7 +5,7 @@ class Solution:
     @return: return the sum of the three integers, the sum closest target.
     """
     def threeSumClosest(self, numbers, target):
-        numbers  = sorted(numbers)
+        numbers  = sorted(numbers) # O(nlogn)
         min_dist = sys.maxsize
         for k in range(2, len(numbers)):
             left, right = 0, k - 1
