@@ -16,8 +16,8 @@ class Solution:
             j = k - 1
             while i < j:
                 if nums[i] + nums[j] + nums[k] < target:
-                    res += (j - i)
-                    i += 1
+                    res += (j - i) # all combinations between nums[i] and nums[j], and ended w/ nums[k] are OK
+                    i += 1 # move nums[i]
                 else:
                     j -= 1
         return res
