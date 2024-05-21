@@ -14,14 +14,14 @@ class Solution:
         max_l, max_r = heights[l], heights[r]
         res = 0
         while l < r:
-            # 是否能积水取决于短板
+            # 是否能积水取决于短板 此处也不需要等号
             if max_r > max_l:
-                res += (max_l - heights[l])
                 l += 1
+                res += max(0, max_l - heights[l])
                 max_l = max(max_l, heights[l])
             else:
-                res += (max_r - heights[r])
                 r -= 1
+                res += max(0, max_r - heights[r])
                 max_r = max(max_r, heights[r])
         return res
 
