@@ -2,6 +2,10 @@ from typing import (
     List,
 )
 
+from typing import (
+    List,
+)
+
 class Solution:
     """
     @param heights: a list of integers
@@ -17,7 +21,7 @@ class Solution:
             # 是否能积水取决于短板 此处也不需要等号
             if max_r > max_l:
                 l += 1
-                res += max(0, max_l - heights[l])
+                res += max(0, max_l - heights[l]) # 顺序可以交换 先执行max(max_l, heights[i]) 确保 max(0, max_l - heights[l])
                 max_l = max(max_l, heights[l])
             else:
                 r -= 1
