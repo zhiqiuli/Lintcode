@@ -9,7 +9,7 @@ class Solution:
     """
     def permute(self, nums: List[int]) -> List[List[int]]:
         res = []
-        visited = [False] * len(nums)
+        visited = [False] * len(nums) # 如此定义访问过的元素可以保证去重
         self.dfs(nums, [], res, visited)
         return res
     
