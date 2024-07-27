@@ -45,16 +45,16 @@ class Solution:
      return nums 
 
  def quick_sort(self, nums, start, end):
-     if start >= end: return
+     if start >= end:
+         return
      l, r = start, end
-     m = (l + r) // 2
-     target = nums[m] # NOTE: 必须保存在单独变量中，如果直接使用nums[m]，在while循环中会nums[m]会发生变化。
+     p = nums[(l + r) // 2] # NOTE: 必须保存在单独变量中，如果直接使用nums[m]，在while循环中会nums[m]会发生变化。
      while l <= r:
-         while l <= r and nums[l] < target:
+         while l <= r and nums[l] < p: # NOTE: 注意（大于等于）并且nums[l]（<）p
              l += 1
-         while l <= r and nums[r] > target:
+         while l <= r and nums[r] > p:
              r -= 1
-         if l <= r:
+         if l <= r: # 这里也是大于等于
              nums[l], nums[r] = nums[r], nums[l]
              l += 1; r -= 1
      self.quick_sort(nums, start, r)
