@@ -16,7 +16,7 @@ class Solution:
         res.append(chars[:])
 
         for i in range(start, len(nums)):
-            # 剪枝 去重
+            # 剪枝，去重，注意这里是i > start，不是i > 0！
             if i > start and nums[i] == nums[i - 1]:
                 continue
             chars.append(nums[i])
