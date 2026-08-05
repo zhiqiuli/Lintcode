@@ -15,7 +15,7 @@ class Solution:
  def partition(self, nums, start, end, k):
      # find kth smallest element in nums, here k is representing the index, and it starts from 0
      # only consider the index [start : end]
-     # the following if ... return is not necessary
+     # NOTE: this if ... return is NOT necessary
      if start >= end:
         return nums[k]
      l, r = start, end

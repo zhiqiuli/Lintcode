@@ -29,6 +29,7 @@ class Solution:
 
         return 0
     
+    # 另外一种写法可以在这个function内部判断新构造的word是否在dict中，再放入words，运行速度会更快一些
     def find_next_words(self, word, dictionary):
         words = []
         for i in range(len(word)): # O(L)

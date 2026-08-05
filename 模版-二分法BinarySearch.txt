@@ -3,31 +3,32 @@
 public int binarySearch (int left, int right){
 	int start = left, end = right;
 	while (start + 1 < end) {
-		int mid = start + (end - start) / 2
-		if (condition(mid)) {
-			end = mid; # 找右边部分的第一个，则修改右边(end)
+		int mid = (start + end) // 2
+		if (nums[mid] >= target) {
+			end = mid; # 满足条件，说明(v)在mid的[左]边，移动end
 		} else {
 			start = mid;
 		}
 	}
-	if (condition(start)) return start; ### 这个部分和if里面的正好相反。如果这里是start先，那if(condition(mid))则是end先。 ###
-	if (condition(end)) return end;
+	### 这个部分和if里面的正好相反。如果这里是start先，那if(condition(mid))则是end先。
+	if (nums(start) == target) return start;
+	if (nums(end)   == target) return end;
 	return -1
 }
 
-2. 在vv(v)xxx中，找最后一个对条件成立的位置（假设condition是外部定义的一个布尔函数）
+2. 在vv(v)xxx中，找最后一个对条件成立的位置
 
 public int binarySearch (int left, int right){
 	int start = left, end = right;
 	while (start + 1 < end) {
-		int mid = start + (end - start) / 2
-		if (condition(mid)) {
-			start = mid; # 找左边部分的最后一个，则修改左边(start)
+		int mid = (start + end) // 2
+		if (nums[mid] <= target) {
+			start = mid; # 满足条件，说明(v)在mid的[右]边，移动start
 		} else {
 			end = mid;
 		}
 	}
-	if (condition(end)) return end;
-	if (condition(start)) return start;
+	if (nums(end)   == target) return end;
+	if (nums(start) == target) return start;
 	return -1
 }

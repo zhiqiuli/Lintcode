@@ -1,7 +1,7 @@
 # (1) inplace sort so no need to return anything
 def mergeSort(array):
     if len(array) > 1:
-        mid = len(array) // 2 # (2) find the middle point
+        mid = len(array) // 2 # (2) find the middle point 这个地方使用len(array)//2可以保证划分的两个部分(left or right)没有空集
         
         left  = array[   :mid] # (3) merge sort takes extra space to store arrays
         right = array[mid:   ]
